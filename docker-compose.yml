@@ -19,7 +19,7 @@ services:
       timeout: 5s
       retries: 5
     ports:
-      - "5546:5432"
+      - "5550:5432"
     networks:
       - app_network
 
@@ -37,7 +37,7 @@ services:
       KC_BOOTSTRAP_ADMIN_PASSWORD: password
       KC_HEALTH_ENABLED: true
     ports:
-      - "8182:8080"
+      - "8185:8080"
     depends_on:
       postgres-keycloak:
         condition: service_healthy
@@ -57,7 +57,7 @@ services:
       timeout: 5s
       retries: 5
     ports:
-      - "5433:5432"
+      - "5436:5432"
     volumes:
       - postgres_Statistiques_data:/var/lib/postgresql/data
     networks:
