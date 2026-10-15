@@ -2,6 +2,16 @@
 
 Microservice **statistiques** du projet glop — Spring Boot (Java 21) + PostgreSQL.
 
+## Architecture
+
+Le projet Maven mono-module suit le découpage en couches `in`, `domain` et `out` :
+
+- `in/restapi` : configuration REST, contrôleurs, payloads, mappers et exceptions ;
+- `domain` : modèles, services, exceptions et ports `in` / `out` ;
+- `out/postgresdb` : adaptateurs, entités, repositories, mappers et exceptions PostgreSQL.
+
+Les ports et packages sont prêts à accueillir les fonctionnalités métier du service.
+
 | | Valeur |
 |---|---|
 | API en local | http://localhost:8083 |
